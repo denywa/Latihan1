@@ -1,41 +1,201 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Form Belajar</title>
+        <title>belajar CSS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .head{
+            margin-left: 210px;
+            margin-top: 30px;
+        }
+        .nav table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .nav table tr td{
+            width: 100px;
+            padding: 5px;
+            border-right: 1px solid #bbb;
+            border-bottom: 1px solid #bbb;
+            border-top: solid 1px #bbb;
+        }
+        
+        .nav table tr td:first-child{
+            border-left: 1px solid #bbb;
+        }
+
+        .nav table tr:first-child td:first-child {
+          border-top-left-radius: 6px;
+        }
+
+        /* top-right border-radius */
+        .nav table tr:first-child td:last-child {
+          border-top-right-radius: 6px;
+        }
+
+        /* bottom-left border-radius */
+        .nav table tr:last-child td:first-child {
+          border-bottom-left-radius: 6px;
+        }
+
+        /* bottom-right border-radius */
+        .nav table tr:last-child td:last-child {
+          border-bottom-right-radius: 6px;
+        }
+
+        .nav{
+            margin-top: 20px;
+            display: flex;
+            justify-content:right ;
+            margin-right: 80px;
+        }
+
+        .alig{
+            display: flex;
+            justify-content:space-evenly;
+            margin-top: 50px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        a:hover{
+            text-decoration: underline;
+            color: rgb(72, 81, 244);
+        }
+
+        .tabel tr td{
+            border: solid black 1px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tabel table{
+            border-collapse: collapse;
+        }
+
+        .tabel tr:first-child{
+            background-color: #bbb;
+            font-weight: bold;
+        }
+        
+        #nama, #lahir, textarea{
+            opacity: 0.5;
+        }
+
+        .tabel a{
+            color: rgb(27, 131, 217);
+        }
+
+        .tabel a:hover{
+            color:rgb(159, 68, 245);
+        }
+
+        </style>
     </head>
     <body>
-        <form action="https://www.google.com/" method="get">
-            <article>
-            <header>
-                <h1>Form Belajar</h1>
-                 <p><b>ini adalah website latihan pertama</b></p>
-                 <hr style="width:350px;text-align:left;margin-left:0">
-            </header>
-            <main>
+        <div class="nav">
+            <table>
+                <tr>
+                    <td style="text-align:center ;"><a href="p1">Home</a></td>
+                    <td style="text-align:center ;"><a href="p2">My Profile</a></td>
+                    <td style="text-align:center ;"><a href="p3">Portofolio</a></td>
+                    <td style="text-align:center ;"><a href="p3">Message Us</a></td>
+                </tr>
+            </table>  
+        </div>
+
+        <hr style="margin-top: 20px;">
+
+        <div class="head">
+            <h1>Form Belajar</h1>
+            <p>Ini ada latihan membuat website pertama</p>
+        </div>
+
+        <div class="alig">
+            <div class="form">
+
                 <table>
                     <tr>
                         <td><label for="nama">Nama</label></td>
-                        <td>: <span style="opacity: 0.5;" style><input id="nama" type="text" value="Nama" size="12"></span></td>
+                        <td>: <input type="text" id="nama" value="Nama" style="width: 234px;"></td>
                     </tr>
                     <tr>
-                        <td><label for="Lahir">Tanggal Lahir</label></td>
-                        <td>: <span style="opacity: 0.5;"><input id="Lahir" type="date" ></main></span></td>
+                        <td><label for="lahir">Tanggal Lahir</label></td>
+                        <td>: <input type="date" id="lahir" style="width: 237px;"></td>
                     </tr>
                     <tr>
                         <td><label for="kelamin">Jenis Kelamin</label></td>
-                        <td>: <input type="radio" id="laki" name="kelamin" value="Laki-Laki"><label for="laki">Laki-Laki</label>
-                            <input type="radio" id="perempuan" name="kelamin" value="Perempuan"><label for="perempuan">Perempuan</label></td>
+                        <td>:
+                            <input type="radio" id="men" name="kelamin" value="Laki-laki">
+                            <label for="men">Laki-laki</label>
+                            <input type="radio" id="women" name="kelamin" value="Perempuan">
+                            <label for="women">Perempuan</label>
+                        </td>
                     </tr>
                     <tr>
-                    <td style="text-align: left; vertical-align: top">Pesan</td> 
-                        <td><span style="vertical-align: top;">: </span><span style="opacity: 0.5;"><textarea rows="8" cols="30">Pesan</textarea></span></td>
+                        <td style="text-align: left; vertical-align: top">Pesan</td> 
+                        <td><span style="vertical-align: top;">:</span> <textarea rows="8" cols="30">Pesan</textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Submit" style="height: 20px; width: 350px;"></td>
                     </tr>
                 </table>
-            </main>
-            <footer>
-                    <input type="submit" value="Submit" style="height: 20px; width: 350px;">
-            </footer>
-            </article>
-        </form>
+            </div>
+
+            <div class="tabel">
+                <table>
+                    <tr>
+                        <td>Nama</td>
+                        <td>Tanggal Lahir</td>
+                        <td>Jenis<br>Kelamin</td>
+                        <td>Pesan</td>
+                        <td>Profile</td>
+                        <td>Delete</td>
+                    </tr>
+                    <tr>
+                        <td>Bapak Budi</td>
+                        <td>December 10,<br>2023</td>
+                        <td>Laki-laki</td>
+                        <td>Hello World</td>
+                        <td><a href="https://www.google.com/" target="_blank" >Klik Disini</a></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Bapak Budi</td>
+                        <td>December 10,<br>2023</td>
+                        <td>Laki-laki</td>
+                        <td>Hello World</td>
+                        <td><a href="p">Klik Disini</a></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Bapak Budi</td>
+                        <td>December 10,<br>2023</td>
+                        <td>Laki-laki</td>
+                        <td>Hello World</td>
+                        <td><a href="p">Klik Disini</a></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Bapak Budi</td>
+                        <td>December 10,<br>2023</td>
+                        <td>Laki-laki</td>
+                        <td>Hello World</td>
+                        <td><a href="p">Klik Disini</a></td>
+                        <td><i class="fa fa-trash-o"></i></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr style="margin-top: 135px;">
     </body>
 </html>
